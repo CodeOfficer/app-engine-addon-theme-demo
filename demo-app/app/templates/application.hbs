@@ -1,5 +1,18 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+{{head-layout}}
 
-{{outlet}}
+<header>
+  <div class="logo">
+    {{#link-to "index"}}<img src="assets/ember-logo.svg" alt="logo">{{/link-to}}
+  </div>
+  <nav>
+    <ul>
+      <li>{{#link-to "demo-engine.index"}}Engine{{/link-to}}</li>
+      <li><a href="" {{action 'setFastbootTheme'}}>Change to Fastboot Theme</a></li>
+      <li><a href="" {{action 'setEmberTheme'}}>Change to Ember Theme</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  {{outlet}}
+</main>

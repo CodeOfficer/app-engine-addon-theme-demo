@@ -16,8 +16,12 @@
     "start": "ember serve",
     "test": "ember test"
   },
+  "dependencies": {
+    "demo-addon": "0.0.0"
+  },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
+    "demo-engine": "0.0.0",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~3.0.1",
     "ember-cli-app-version": "^3.0.0",
@@ -28,10 +32,13 @@
     "ember-cli-htmlbars-inline-precompile": "^1.0.0",
     "ember-cli-inject-live-reload": "^1.4.1",
     "ember-cli-qunit": "^4.1.1",
+    "ember-cli-sass": "^7.1.7",
     "ember-cli-shims": "^1.2.0",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^2.0.0",
+    "ember-cookies": "^0.2.0",
     "ember-data": "~3.0.0",
+    "ember-engines": "^0.5.14",
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.0.0",
     "ember-maybe-import-regenerator": "^0.1.6",

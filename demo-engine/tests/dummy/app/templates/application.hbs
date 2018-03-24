@@ -1,3 +1,14 @@
-<h2 id="title">Welcome to Ember</h2>
+{{head-layout}}
 
-{{outlet}}
+<header>
+  <nav>
+    <ul>
+      <li><a href="" {{action 'setFastbootTheme'}}>Change to Fastboot Theme</a></li>    {{!-- {{else}} --}}
+      <li><a href="" {{action 'setEmberTheme'}}>Change to Ember Theme</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  {{outlet}}
+</main>

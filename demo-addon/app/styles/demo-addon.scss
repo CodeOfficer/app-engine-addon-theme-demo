@@ -1,0 +1,56 @@
+body {
+  width: 100%;
+  margin: 0;
+  background-color: #fffdfa;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  height: 50px;
+
+  .logo {
+    margin-left: 5%;
+    margin-right: 20px;
+    img {
+      display: block;
+    }
+  }
+
+  nav {
+    display: inherit;
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      margin-top: 10px;
+      padding: 0;
+      display: flex;
+      flex-flow: row wrap;
+
+      li {
+        display: inline-block;
+      }
+    }
+
+    li a {
+      font-family: Roboto, "Helvetica Neue", sans-serif;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 0 16px;
+      text-decoration: none;
+    }
+  }
+}
+
+main {
+  // text-align: right;
+  display: flex;
+  align-items: center;
+
+  img {
+    margin: 20px 0 0 40px;
+  }
+}
