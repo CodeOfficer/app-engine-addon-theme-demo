@@ -1,12 +1,16 @@
+/*
+  We need include our theme assests in the application build
+  and merge this default configuration with the apps.
+*/
+
 'use strict';
 
 const defaults = {
   theme: {
-    useAssetMap: true,
-    defaultTheme: 'ember',
+    defaultTheme: 'theme-1',
     themes: [
-      'ember',
-      'fastboot'
+      'theme-1',
+      'theme-2'
     ]
   }
 };

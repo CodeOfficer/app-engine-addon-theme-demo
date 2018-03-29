@@ -7,8 +7,10 @@ module.exports = function(environment) {
     rootURL: '/',
     locationType: 'auto',
 
+    // Our application can override the addon's default
+    // theme configuration.
     theme: {
-      defaultTheme: 'ember'
+      defaultTheme: 'theme-1'
     },
 
     EmberENV: {
