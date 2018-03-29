@@ -18,6 +18,6 @@ export default Route.extend({
   }),
 
   themeChanged: on('deactivate', function(){
-    this.send('themeChanged'); // bubbles up to host application route
+    this.send('themeChanged'); // bubbles up to host app's application route
   })
 });

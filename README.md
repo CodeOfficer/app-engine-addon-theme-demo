@@ -29,6 +29,117 @@ npm install
 ember s
 ```
 
+## Usage
+
+
+In `demo-addon/app/styles` create your theme files as usual.
+
+```
+demo-addon/app/styles/demo-addon.scss
+demo-addon/app/styles/theme-1.scss
+demo-addon/app/styles/theme-2.scss
+demo-addon/app/styles/main.scss
+```
+
+In `demo-addon/index.js` specify default settings for `ember-theme-changer`.
+
+```
+const defaults = {
+  theme: {
+    defaultTheme: 'theme-1',
+    themes: [
+      'theme-1',
+      'theme-2'
+    ]
+  }
+};
+```
+
+In `demo-app/config/environment.js` specify a `defaultTheme` only if it's different than your addons defaults.
+
+```
+theme: {
+  defaultTheme: 'theme-1'
+}
+```
+
+In `demo-app/app/app.js` share your addon's `themeChanger` service with your engine.
+
+```
+init() {
+  this._super(...arguments);
+  this.set('engines', {
+    demoEngine: {
+      dependencies: {
+        services: [
+          'themeChanger'
+        ]
+      }
+    }
+  });
+}
+```
+
+In `demo-engine/addon/engine.js` specify the `themeChanger` service as a dependency of your engine.
+
+```
+init() {
+  this._super(...arguments);
+  this.set('dependencies', {
+    services: [
+      'themeChanger'
+    ]
+  });
+}
+```
+
+In `demo-app/app/styles/app.scss` import your addons styles.
+
+```
+@import 'demo-addon';
+```
+
+In `demo-engine/addon/routes/application.js`, if your engine needs to change the current theme do so by setting that theme in the `activate` hook of its parent route, then in `deactivate` bubble a `themeChanged` event to your host app.
+
+```
+setTheme: on('activate', function(){
+  this.get('themeChanger').set('theme', 'theme-2');
+}),
+
+themeChanged: on('deactivate', function(){
+  this.send('themeChanged'); // bubbles up to host application route
+})
+```
+
+In `demo-app/app/routes/application.js` switch back to your applications theme by listening to the `themeChanged` event that your engine has triggered on deactivation.
+
+```
+themeChanger: service(),
+
+actions: {
+  themeChanged() {
+    const themeChanger = this.get('themeChanger');
+    themeChanger.set('theme', ENV.theme.defaultTheme);
+  }
+}
+```
+
+Then anywhere in your app or its engines you can utilize the `themeChanger` service to change the current theme.
+
+```
+themeChanger: service(),
+
+actions: {
+  setThemeOne() {
+    this.get('themeChanger').set('theme', 'theme-1');
+  },
+
+  setThemeTwo() {
+    this.get('themeChanger').set('theme', 'theme-2');
+  }
+}
+```
+
 ### Related Links
 
   - [Ember Engines](http://ember-engines.com)
