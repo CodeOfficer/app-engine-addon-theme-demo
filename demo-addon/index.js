@@ -7,6 +7,7 @@
 
 const defaults = {
   theme: {
+    useCookie: false,
     defaultTheme: 'theme-1',
     themes: [
       'theme-1',
