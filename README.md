@@ -1,7 +1,7 @@
 
-# Using `ember-theme-changer` in an addon
+# Using `ember-theme-changerr` in an addon
 
-This example project demonstrates a way to leverage [ember-theme-changer](https://github.com/leadiato/ember-theme-changer) in an addon to suport the themeing of both a host app and its engines.
+This example project demonstrates a way to leverage [ember-theme-changerr](https://github.com/codeofficer/ember-theme-changer) in an addon to suport the themeing of both a host app and its engines.
 
 ## Overview
 
@@ -41,7 +41,7 @@ demo-addon/app/styles/theme-2.scss
 demo-addon/app/styles/main.scss
 ```
 
-In `demo-addon/index.js` specify default settings for `ember-theme-changer`.
+In `demo-addon/index.js` specify default settings for `ember-theme-changerr`.
 
 ```
 const defaults = {
@@ -143,11 +143,11 @@ actions: {
 ### Related Links
 
   - [Ember Engines](http://ember-engines.com)
-  - [Ember Theme Changer](https://www.npmjs.com/package/ember-theme-changer)
+  - [Ember Theme Changer](https://www.npmjs.com/package/ember-theme-changerr)
 
 ### Demo-addon
 
- This addon leverages the `ember-theme-changer` addon to serve up different theme files with your host app. It shares a `themeChanger` service with the app, which can then be injected into engines that depend on it. `ember-theme-changer` is configured with a `defaultTheme` which can then be changed at any time through its `themeChanger` service. Optionally, a cookie can be set when the active theme changes so that the `defaultTheme` can be overridden if the app is refreshed.
+ This addon leverages the `ember-theme-changerr` addon to serve up different theme files with your host app. It shares a `themeChanger` service with the app, which can then be injected into engines that depend on it. `ember-theme-changerr` is configured with a `defaultTheme` which can then be changed at any time through its `themeChanger` service. Optionally, a cookie can be set when the active theme changes so that the `defaultTheme` can be overridden if the app is refreshed.
 
 ### Demo-engine
 
