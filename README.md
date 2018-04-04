@@ -1,7 +1,7 @@
 
 # Using `ember-theme-changerr` in an addon
 
-This example project demonstrates a way to leverage [ember-theme-changerr](https://github.com/codeofficer/ember-theme-changer) in an addon to suport the themeing of both a host app and its engines.
+This example project demonstrates a way to leverage [ember-theme-changerr](https://github.com/codeofficer/ember-theme-changerr) in an addon to suport the themeing of both a host app and its engines. `ember-theme-changerr` is a fork of [ember-theme-changer](https://github.com/leadiato/ember-theme-changer) that cleans up the code and allows cookies to be turned off.
 
 ## Overview
 
