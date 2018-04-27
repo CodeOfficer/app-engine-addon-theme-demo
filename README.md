@@ -16,13 +16,19 @@ cd demo-addon
 npm install
 npm link
 
+cd demo-ui-addon
+npm install
+npm link
+
 cd demo-engine
 npm link demo-addon
+npm link demo-ui-addon
 npm install
 npm link
 
 cd demo-app
 npm link demo-addon
+npm link demo-ui-addon
 npm link demo-engine
 npm install
 
@@ -147,7 +153,11 @@ actions: {
 
 ### Demo-addon
 
- This addon leverages the `ember-theme-changerr` addon to serve up different theme files with your host app. It shares a `themeChanger` service with the app, which can then be injected into engines that depend on it. `ember-theme-changerr` is configured with a `defaultTheme` which can then be changed at any time through its `themeChanger` service. Optionally, a cookie can be set when the active theme changes so that the `defaultTheme` can be overridden if the app is refreshed.
+This addon leverages the `ember-theme-changerr` addon to serve up different theme files with your host app. It shares a `themeChanger` service with the app, which can then be injected into engines that depend on it. `ember-theme-changerr` is configured with a `defaultTheme` which can then be changed at any time through its `themeChanger` service. Optionally, a cookie can be set when the active theme changes so that the `defaultTheme` can be overridden if the app is refreshed.
+
+### Demo-ui-addon
+
+This addon demonstrates centrally storing shared components that will later be styled by themes stored in `demo-addon`. Of note: Other addons or engines that consume this addon need to specify this addon as a dependency and not a dev dependency.
 
 ### Demo-engine
 

@@ -19,6 +19,7 @@
     "test": "ember try:each"
   },
   "dependencies": {
+    "demo-ui-addon": "0.0.0",
     "ember-cli-babel": "^6.6.0",
     "ember-cli-htmlbars": "^2.0.1"
   },
