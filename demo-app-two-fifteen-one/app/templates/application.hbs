@@ -1,0 +1,18 @@
+{{head-layout}}
+
+<header>
+  <div class="logo">
+    {{#link-to "index"}}<img src="assets/ember-logo.svg" alt="logo">{{/link-to}}
+  </div>
+  <nav>
+    <ul>
+      <li>{{#link-to "demo-engine.index"}}Engine{{/link-to}}</li>
+      <li><a href="" {{action 'setThemeTwo'}}>Change to Theme 2</a></li>
+      <li><a href="" {{action 'setThemeOne'}}>Change to Theme 1</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  {{outlet}}
+</main>
