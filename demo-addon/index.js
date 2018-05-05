@@ -20,14 +20,16 @@ module.exports = {
   name: 'demo-addon',
 
   included: function(app) {
-    this._super.included(app);
+    this._super.included.apply(this, arguments);
 
     defaults.theme.themes.forEach(function(theme) {
-      app
-        .options
-        .outputPaths
-        .app
-        .css[theme] = `/assets/${theme}.css`;
+      if (app.options.outputPaths.app) {
+        app
+          .options
+          .outputPaths
+          .app
+          .css[theme] = `/assets/${theme}.css`;
+      }
     });
   },
 
