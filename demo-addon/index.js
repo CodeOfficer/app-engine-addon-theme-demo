@@ -22,15 +22,17 @@ module.exports = {
   included: function(app) {
     this._super.included.apply(this, arguments);
 
-    defaults.theme.themes.forEach(function(theme) {
-      if (app.options.outputPaths.app) {
-        app
-          .options
-          .outputPaths
-          .app
-          .css[theme] = `/assets/${theme}.css`;
-      }
-    });
+    if (app.options.outputPaths.app) {
+      defaults.theme.themes.forEach(function(theme) {
+        if (app.options.outputPaths.app) {
+          app
+            .options
+            .outputPaths
+            .app
+            .css[theme] = `/assets/${theme}.css`;
+        }
+      });
+    }
   },
 
   config: function() {
