@@ -19,7 +19,8 @@ const App = Application.extend({
       demoEngine: {
         dependencies: {
           services: [
-            'themeChanger'
+            'head-data',
+            'theme-changer'
           ]
         }
       }

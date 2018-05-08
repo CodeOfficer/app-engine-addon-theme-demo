@@ -17,12 +17,11 @@
     "test": "ember test"
   },
   "dependencies": {
-    "demo-addon": "0.0.0"
+    "demo-ui-addon": "file:../demo-ui-addon"
   },
   "devDependencies": {
+    "demo-engine": "file:../demo-engine",
     "broccoli-asset-rev": "^2.4.5",
-    "demo-engine": "0.0.0",
-    "demo-ui-addon": "0.0.0",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~3.0.1",
     "ember-cli-app-version": "^3.0.0",

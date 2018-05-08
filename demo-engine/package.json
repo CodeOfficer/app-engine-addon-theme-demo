@@ -19,13 +19,13 @@
     "test": "ember try:each"
   },
   "dependencies": {
-    "demo-ui-addon": "0.0.0",
+    "demo-ui-addon": "file:../demo-ui-addon",
     "ember-cli-babel": "^6.6.0",
     "ember-cli-htmlbars": "^2.0.1"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
-    "demo-addon": "0.0.0",
+    "demo-ui-addon": "0.0.0",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~3.0.1",
     "ember-cli-dependency-checker": "^2.0.0",

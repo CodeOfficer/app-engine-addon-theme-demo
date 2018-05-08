@@ -12,24 +12,13 @@ With style and theming concerns living in a single addon, it becomes easy to han
 ## Installation
 
 ```
-cd demo-addon
-npm install
-npm link
-
 cd demo-ui-addon
 npm install
-npm link
 
 cd demo-engine
-npm link demo-addon
-npm link demo-ui-addon
 npm install
-npm link
 
 cd demo-app
-npm link demo-addon
-npm link demo-ui-addon
-npm link demo-engine
 npm install
 
 ember s
@@ -38,16 +27,16 @@ ember s
 ## Usage
 
 
-In `demo-addon/app/styles` create your theme files as usual.
+In `demo-ui-addon/app/styles` create your theme files as usual.
 
 ```
-demo-addon/app/styles/demo-addon.scss
-demo-addon/app/styles/theme-1.scss
-demo-addon/app/styles/theme-2.scss
-demo-addon/app/styles/main.scss
+demo-ui-addon/app/styles/demo-ui-addon.scss
+demo-ui-addon/app/styles/theme-1.scss
+demo-ui-addon/app/styles/theme-2.scss
+demo-ui-addon/app/styles/main.scss
 ```
 
-In `demo-addon/index.js` specify default settings for `ember-theme-changerr`.
+In `demo-ui-addon/index.js` specify default settings for `ember-theme-changerr`.
 
 ```
 const defaults = {
@@ -78,7 +67,8 @@ init() {
     demoEngine: {
       dependencies: {
         services: [
-          'themeChanger'
+          'head-data',
+          'theme-changer'
         ]
       }
     }
@@ -93,7 +83,8 @@ init() {
   this._super(...arguments);
   this.set('dependencies', {
     services: [
-      'themeChanger'
+      'head-data',
+      'theme-changer'
     ]
   });
 }
@@ -102,7 +93,7 @@ init() {
 In `demo-app/app/styles/app.scss` import your addons styles.
 
 ```
-@import 'demo-addon';
+@import 'demo-ui-addon';
 ```
 
 In `demo-engine/addon/routes/application.js`, if your engine needs to change the current theme do so by setting that theme in the `activate` hook of its parent route, then in `deactivate` bubble a `themeChanged` event to your host app.
@@ -151,13 +142,9 @@ actions: {
   - [Ember Engines](http://ember-engines.com)
   - [Ember Theme Changer](https://www.npmjs.com/package/ember-theme-changerr)
 
-### Demo-addon
+### demo-ui-addon
 
-This addon leverages the `ember-theme-changerr` addon to serve up different theme files with your host app. It shares a `themeChanger` service with the app, which can then be injected into engines that depend on it. `ember-theme-changerr` is configured with a `defaultTheme` which can then be changed at any time through its `themeChanger` service. Optionally, a cookie can be set when the active theme changes so that the `defaultTheme` can be overridden if the app is refreshed.
-
-### Demo-ui-addon
-
-This addon demonstrates centrally storing shared components that will later be styled by themes stored in `demo-addon`. Of note: Other addons or engines that consume this addon need to specify this addon as a dependency and not a dev dependency.
+This addon leverages the `ember-theme-changerr` addon to serve up different theme files with your host app. It shares a `themeChanger` service with the app, which can then be injected into engines that depend on it. `ember-theme-changerr` is configured with a `defaultTheme` which can then be changed at any time through its `themeChanger` service. Optionally, a cookie can be set when the active theme changes so that the `defaultTheme` can be overridden if the app is refreshed. This addon also demonstrates centrally storing shared components that will later be styled by themes. Of note: Other addons or engines that consume this addon need to specify this addon as a dependency and not a dev dependency.
 
 ### Demo-engine
 
@@ -165,4 +152,4 @@ This engine depends on the host app's `themeChanger` service. When its applicati
 
 ### Demo-app
 
-This app consumes both `demo-engine` & `demo-addon` to demonstrate our ability to serve up styles themes from both the host app and its engine.
+This app consumes both `demo-engine` & `demo-ui-addon` to demonstrate our ability to serve up styles themes from both the host app and its engine.
