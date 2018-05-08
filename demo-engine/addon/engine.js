@@ -13,7 +13,8 @@ const Eng = Engine.extend({
     this._super(...arguments);
     this.set('dependencies', {
       services: [
-        'themeChanger'
+        'head-data',
+        'theme-changer'
       ]
     });
   }

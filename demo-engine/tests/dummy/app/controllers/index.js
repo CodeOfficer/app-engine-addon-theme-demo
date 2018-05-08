@@ -8,13 +8,5 @@ import { alias } from '@ember/object/computed';
 export default Controller.extend({
   themeChanger: service(),
 
-  actions: {
-    setThemeOne() {
-      this.get('themeChanger').set('theme', 'theme-1');
-    },
-
-    setThemeTwo() {
-      this.get('themeChanger').set('theme', 'theme-2');
-    }
-  }
+  theme: alias('themeChanger.theme')
 });
