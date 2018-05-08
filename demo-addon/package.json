@@ -21,7 +21,7 @@
   "dependencies": {
     "ember-cli-htmlbars": "1.1.1",
     "ember-cli-babel": "^6.8.0",
-    "ember-theme-changerr": "file:../ember-theme-changerr"
+    "ember-theme-changerr": "0.6.0"
   },
   "devDependencies": {
     "broccoli-asset-rev": "2.4.5",
