@@ -1,7 +1,7 @@
 
 # Using `ember-theme-changerr` in an addon
 
-This example project demonstrates a way to leverage [ember-theme-changerr](https://github.com/codeofficer/ember-theme-changerr) in an addon to suport the themeing of both a host app and its engines. `ember-theme-changerr` is a fork of [ember-theme-changer](https://github.com/leadiato/ember-theme-changer) that cleans up the code and allows cookies to be turned off.
+This example project demonstrates a way to leverage [ember-theme-changerr](https://github.com/codeofficer/ember-theme-changerr) in an addon to suport the themeing of both a host app and its engines. `ember-theme-changerr` is a fork of [ember-theme-changer](https://github.com/leadiato/ember-theme-changer) that cleans up the code and removes cookies.
 
 ## Overview
 
@@ -144,7 +144,7 @@ actions: {
 
 ### demo-ui-addon
 
-This addon leverages the `ember-theme-changerr` addon to serve up different theme files with your host app. It shares a `themeChanger` service with the app, which can then be injected into engines that depend on it. `ember-theme-changerr` is configured with a `defaultTheme` which can then be changed at any time through its `themeChanger` service. Optionally, a cookie can be set when the active theme changes so that the `defaultTheme` can be overridden if the app is refreshed. This addon also demonstrates centrally storing shared components that will later be styled by themes. Of note: Other addons or engines that consume this addon need to specify this addon as a dependency and not a dev dependency.
+This addon leverages the `ember-theme-changerr` addon to serve up different theme files with your host app. It shares a `themeChanger` service with the app, which can then be injected into engines that depend on it. `ember-theme-changerr` is configured with a `defaultTheme` which can then be changed at any time through its `themeChanger` service. This addon also demonstrates centrally storing shared components that will later be styled by themes. Of note: Other addons or engines that consume this addon need to specify this addon as a dependency and not a dev dependency.
 
 ### Demo-engine
 
